@@ -1,0 +1,94 @@
+
+* [[https://setuptools.pypa.io/en/latest/userguide/declarative_config.html][setup.cfg]]
+
+Setuptools allows using configuration files (usually setup.cfg) to define a
+package’s metadata and other options that are normally supplied to the setup()
+function
+
+a good reference package: https://github.com/octodns/octodns
+ref: https://github.com/octodns/octodns/blob/4b44ab14b1f0a52f1051c67656d6e3dd6f0ba903/setup.cfg#L34
+ref: https://jwodder.github.io/kbits/posts/pypkg-data/
+
+* pyproject.toml
+
+https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
+
+* install package requirements
+
+pip install -r ./requirements.txt
+
+* python package structure
+ref: https://docs.python-guide.org/writing/structure/
+Any directory with an __init__.py file is considered a Python package. Leaving an
+__init__.py file empty is considered normal and even good practice, if the
+package’s modules and sub-packages do not need to share any code.
+
+.
+├── hello_python
+│   ├── cmd
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-39.pyc
+│   │   │   └── simple.cpython-39.pyc
+│   │   └── simple.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-39.pyc
+│   └── simple.py
+├── LICENSE.txt
+├── pyproject.toml
+├── readme.org
+├── requirements.txt
+├── setup.cfg
+└── tests
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-39.pyc
+    │   ├── test_simple.cpython-39.pyc
+    │   └── test_simple.cpython-39-pytest-7.0.1.pyc
+    └── test_simple.py
+
+* build & install package -> .whl
+
+#+begin_src shell
+  python -m build
+#+end_src
+
+.whl package goes into dist/
+
+list the contents of the .whl package:
+
+#+begin_src shell
+  unzip -l <package-name>
+#+end_src
+
+to install the package:
+
+#+begin_src shell
+pip install <package-name>.whl
+#+end_src
+
+to verify resources are available after installing the package:
+
+you can see 'cmd' and 'system_config.yaml' are available in the resources
+
+#+begin_src shell
+$ python
+Python 3.9.7 (default, Sep 16 2021, 13:09:58)
+[GCC 7.5.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import hello_python
+>>> import importlib.resources
+>>> list(importlib.resources.contents('hello_python'))
+['__pycache__', 'simple.py', 'cmd', 'system_config.yaml', 'data', '__init__.py']
+>>>
+#+end_src
+
+to make sure of the yaml file:
+
+#+begin_src python
+  # make sure to install PyYAML
+  import yaml
+      with open("system_config.yaml", "r") as f:
+          config = yaml.load(f, Loader=yaml.FullLoader)
+#+end_src

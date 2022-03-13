@@ -1,0 +1,10 @@
+*.pyc
+.coverage
+.env
+coverage.xml
+dist/
+env/
+htmlcov/
+nosetests.xml
+*.egg-info/
+__pycache__/

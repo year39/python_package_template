@@ -1,0 +1,21 @@
+
+# import yaml
+# with open("system_config.yaml", "r") as fd:
+#        config = yaml.load(fd, Loader=yaml.FullLoader)
+
+APP:
+    var: true
+
+# networking configuration parameters
+network:
+    MQTTHOST: "127.0.0.1"
+    live_data_uris:
+        - "http://127.0.0.1:8051/"
+        - "https://duckduckgo.com/"
+
+controller:
+    sim: false
+    address: "192.168.1.10"
+    adapters:
+        30x30mm:
+            pcb_resistor: 0
