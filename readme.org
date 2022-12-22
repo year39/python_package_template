@@ -23,31 +23,6 @@ Any directory with an __init__.py file is considered a Python package. Leaving a
 __init__.py file empty is considered normal and even good practice, if the
 package’s modules and sub-packages do not need to share any code.
 
-.
-├── hello_python
-│   ├── cmd
-│   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   ├── __init__.cpython-39.pyc
-│   │   │   └── simple.cpython-39.pyc
-│   │   └── simple.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   └── __init__.cpython-39.pyc
-│   └── simple.py
-├── LICENSE.txt
-├── pyproject.toml
-├── readme.org
-├── requirements.txt
-├── setup.cfg
-└── tests
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-39.pyc
-    │   ├── test_simple.cpython-39.pyc
-    │   └── test_simple.cpython-39-pytest-7.0.1.pyc
-    └── test_simple.py
-
 * build & install package -> .whl
 
 #+begin_src shell
