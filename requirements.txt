@@ -1,13 +1,12 @@
 
 # download from pypi.org or whatever defined in ~/.config/pip/pip.conf
+build
+pyyaml
 pytest
 pytest-cov
 
 ## download source code from github repo and build it
 # urllib3 1.26.8
-urllib3 @ git+ssh://git@github.com:urllib3/urllib3.git@1.26.8
-
-# or, download and install .whl if available
 urllib3 @ https://github.com/urllib3/urllib3/releases/download/1.26.8/urllib3-1.26.8-py2.py3-none-any.whl
 
 # or, use find-links

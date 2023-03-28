@@ -3,6 +3,7 @@
 .env
 coverage.xml
 dist/
+build/
 env/
 htmlcov/
 nosetests.xml
