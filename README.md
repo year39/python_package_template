@@ -1,12 +1,3 @@
----
-id: python-package-template
-title: Python Package Template
-tags: [python]
-created: 12/23/2020
-updated: 02/04/2023
-excerpt: This is a simple Python package/project template with unit tests and setuptools.
-readTime: 5 minutes
----
 
 # Project structure
 
