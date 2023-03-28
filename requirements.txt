@@ -8,7 +8,4 @@ pytest-cov
 ## download source code from github repo and build it
 # urllib3 1.26.8
 urllib3 @ https://github.com/urllib3/urllib3/releases/download/1.26.8/urllib3-1.26.8-py2.py3-none-any.whl
-
-# or, use find-links
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.11.0
+pymongo @ https://github.com/mongodb/mongo-python-driver/archive/refs/tags/4.3.3.tar.gz
